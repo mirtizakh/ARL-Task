@@ -1,11 +1,13 @@
 package com.task.sample.app
 
 import android.app.Application
+import com.task.sample.activity.MainActivityViewModelFactory
 import com.task.sample.data.network.api_call.session.SessionManager
 import com.task.sample.dialog.DialogManager
 import com.task.sample.ui.auth.login.LoginViewModelFactory
 import com.task.sample.ui.auth.signup.SignupViewModelFactory
-import com.task.sample.ui.dashboard.DashboardViewModelFactory
+import com.task.sample.ui.cart.CartFragmentViewModelFactory
+import com.task.sample.ui.products.categories.ProductCategoriesFragmentViewModelFactory
 import com.task.sample.ui.splash.SplashViewModelFactory
 import com.task.sample.util.LogExceptions
 import com.task.sample.util.Validation
@@ -32,7 +34,9 @@ class AppController : Application() {
             bind() from singleton { SignupViewModelFactory(instance(), instance()) }
             bind() from singleton { LoginViewModelFactory(instance(), instance()) }
             bind() from singleton { SplashViewModelFactory(instance()) }
-            bind() from singleton { DashboardViewModelFactory() }
+            bind() from singleton { ProductCategoriesFragmentViewModelFactory() }
+            bind() from singleton { CartFragmentViewModelFactory() }
+            bind() from singleton { MainActivityViewModelFactory() }
 
         }
 

@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 
 abstract class BaseFragment<VDB : ViewDataBinding, BVM : BaseViewModel<*>> : Fragment() {
-
+    // region VARIABLES
     @get:LayoutRes
     abstract val layoutId: Int
 
@@ -24,6 +24,9 @@ abstract class BaseFragment<VDB : ViewDataBinding, BVM : BaseViewModel<*>> : Fra
     lateinit var viewDataBinding: VDB
 
     abstract fun getBindingVariable(): Int
+    // end region VARIABLES
+
+    protected abstract fun initUserInterface(view: View?)
 
     // region LIFECYCLE
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,5 +56,4 @@ abstract class BaseFragment<VDB : ViewDataBinding, BVM : BaseViewModel<*>> : Fra
     // end region LIFECYCLE
 
 
-    protected abstract fun initUserInterface(view: View?)
 }

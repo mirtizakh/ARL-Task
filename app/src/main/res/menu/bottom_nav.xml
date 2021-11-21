@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/products"
+        android:contentDescription="@string/products"
+        android:icon="@drawable/ic_products"
+        android:title="@string/products" />
+    <item
+        android:id="@+id/cart"
+        android:contentDescription="@string/cart"
+        android:icon="@drawable/ic_cart"
+        android:title="@string/cart" />
+    <item
+        android:id="@+id/logout"
+        android:contentDescription="@string/logout"
+        android:icon="@drawable/ic_logout"
+        android:title="@string/logout" />
+</menu>

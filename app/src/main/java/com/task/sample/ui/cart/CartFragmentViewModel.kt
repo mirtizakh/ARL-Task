@@ -1,8 +1,8 @@
-package com.task.sample.ui.dashboard
+package com.task.sample.ui.cart
 
 import com.task.sample.ui.base.BaseViewModel
 
-class DashboardViewModel : BaseViewModel<DashboardFragmentNavigator>() {
+class CartFragmentViewModel : BaseViewModel<CartFragmentNavigator>() {
     // region VARIABLES
 
     // end region VARIABLES

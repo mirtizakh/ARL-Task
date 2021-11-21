@@ -1,18 +1,32 @@
 <resources>
     <string name="app_name">Sample Task</string>
+
+    <!-- Dialog -->
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
+
+    <!-- Error -->
     <string name="something_went_wrong">Something went wrong</string>
+    <string name="please_enter_correct_password">Please enter correct password with minimum 8 characters length</string>
+    <string name="please_enter_correct_name">Please enter correct name with minimum 3 characters length</string>
+    <string name="please_enter_correct_email">Please enter correct email</string>
+
+    <!-- Authentication -->
     <string name="enter_name">Enter Name</string>
     <string name="enter_email">Enter Email</string>
     <string name="enter_password">Enter Password</string>
     <string name="enter_confirm_password">Confirm Password</string>
     <string name="signup">Signup</string>
     <string name="login">Login</string>
-    <string name="welcome">Welcome</string>
     <string name="click_to_login">Click here to Login</string>
     <string name="click_to_signup">Click here to Signup</string>
-    <string name="please_enter_correct_password">Please enter correct password with minimum 8 characters length</string>
-    <string name="please_enter_correct_name">Please enter correct name with minimum 3 characters length</string>
-    <string name="please_enter_correct_email">Please enter correct email</string>
+
+    <!-- Splash -->
+    <string name="welcome">Welcome</string>
+
+    <!-- MainActivity Bottom View -->
+    <string name="products">Products</string>
+    <string name="cart">Cart</string>
+    <string name="logout">Logout</string>
+    <string name="settings">Settings</string>
 </resources>

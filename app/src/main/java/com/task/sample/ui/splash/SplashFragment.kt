@@ -28,11 +28,10 @@ class SplashFragment : BaseFragment<FragmentSplashBinding, SplashViewModel>(),
     // region OVERRIDE Methods
     override fun initUserInterface(view: View?) {
         injectedViewModel.setNavigator(this)
-
+        (activity as MainActivity).setVisibilityOfBottomView(View.GONE)
         Handler(Looper.getMainLooper()).postDelayed({
             injectedViewModel.redirectedToScreen()
         }, 3000)
-
     }
 
     override fun redirectToScreen(redirectionId: Int) {
