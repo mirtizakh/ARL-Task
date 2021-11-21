@@ -28,13 +28,13 @@ class SignupFragment : BaseFragment<FragmentSignupBinding, SignupViewModel>(),
 
         viewDataBinding.btnSignup.setOnClickListener {
             if (injectedViewModel.validate()) {
-
+                injectedViewModel.signupUser()
             }
         }
     }
 
     override fun signUpSuccessfully() {
-
+        Toast.makeText(requireContext(), "Signup", Toast.LENGTH_LONG).show()
     }
 
     override fun showFieldsError(error: Int) {

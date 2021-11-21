@@ -1,5 +1,6 @@
 package com.task.sample.ui.auth.signup
 
+import android.view.View
 import androidx.lifecycle.MutableLiveData
 import com.task.sample.R
 import com.task.sample.data.network.api_call.session.ISessionManager
@@ -21,6 +22,21 @@ class SignupViewModel(
         return validateName() && validateEmail() && validatePassword() && validateConfirmPassword()
     }
 
+    fun signupUser() {
+        getNavigator()?.setVisibilityForProgress(View.VISIBLE)
+        sessionManager.signUpUser(
+            liveDataEmail.value?.trim() ?: String.empty,
+            liveDataPassword.value?.trim() ?: String.empty
+        ) { callBack ->
+            if (callBack) {
+                getNavigator()?.signUpSuccessfully()
+                getNavigator()?.setVisibilityForProgress(View.GONE)
+            } else {
+                getNavigator()?.showFieldsError(R.string.something_went_wrong)
+                getNavigator()?.setVisibilityForProgress(View.GONE)
+            }
+        }
+    }
 
     private fun validatePassword(): Boolean {
         return if (validation.isPasswordValid(liveDataPassword.value?.trim() ?: String.empty)) {
