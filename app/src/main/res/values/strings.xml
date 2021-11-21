@@ -14,4 +14,7 @@
     <string name="enter_phone_number">Enter Phone Number</string>
     <string name="signup">Signup</string>
     <string name="click_to_login">Click here to Login</string>
+    <string name="please_enter_correct_password">Please enter correct password with minimum 8 characters length</string>
+    <string name="please_enter_correct_name">Please enter correct name with minimum 3 characters length</string>
+    <string name="please_enter_correct_email">Please enter correct email</string>
 </resources>

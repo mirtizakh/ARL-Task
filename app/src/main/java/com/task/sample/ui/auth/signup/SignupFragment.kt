@@ -1,6 +1,7 @@
 package com.task.sample.ui.auth.signup
 
 import android.view.View
+import android.widget.Toast
 import com.task.sample.BR
 import com.task.sample.R
 import com.task.sample.app.AppController
@@ -14,7 +15,7 @@ class SignupFragment : BaseFragment<FragmentSignupBinding, SignupViewModel>(),
     // region VARIABLES
     override val layoutId = R.layout.fragment_signup
 
-    override fun getBindingVariable() = BR._all
+    override fun getBindingVariable() = BR.signupViewModel
 
     override val viewModel = SignupViewModel::class.java
 
@@ -24,6 +25,12 @@ class SignupFragment : BaseFragment<FragmentSignupBinding, SignupViewModel>(),
     // region OVERRIDE Methods
     override fun initUserInterface(view: View?) {
         injectedViewModel.setNavigator(this)
+
+        viewDataBinding.btnSignup.setOnClickListener {
+            if (injectedViewModel.validate()) {
+
+            }
+        }
     }
 
     override fun signUpSuccessfully() {
@@ -31,7 +38,7 @@ class SignupFragment : BaseFragment<FragmentSignupBinding, SignupViewModel>(),
     }
 
     override fun showFieldsError(error: Int) {
-
+        Toast.makeText(requireContext(), error, Toast.LENGTH_LONG).show()
     }
 
     /**
