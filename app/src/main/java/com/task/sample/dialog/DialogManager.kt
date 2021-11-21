@@ -1,8 +1,8 @@
-package com.task.mainactivity.dialog
+package com.task.sample.dialog
 
 import android.app.AlertDialog
 import android.content.Context
-import com.task.mainactivity.R
+import com.task.sample.R
 
 class DialogManager {
     // region METHODS

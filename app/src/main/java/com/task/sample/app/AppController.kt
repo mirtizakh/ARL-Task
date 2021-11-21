@@ -1,7 +1,8 @@
-package com.task.mainactivity.app
+package com.task.sample.app
 
 import android.app.Application
-import com.task.mainactivity.dialog.DialogManager
+import com.task.sample.dialog.DialogManager
+import com.task.sample.ui.auth.signup.SignupViewModelFactory
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.singleton
@@ -16,6 +17,9 @@ class AppController : Application() {
 
         val kodein = Kodein.lazy {
             bind() from singleton { DialogManager() }
+
+            // ViewModelFactory
+            bind() from singleton { SignupViewModelFactory() }
 
         }
 
