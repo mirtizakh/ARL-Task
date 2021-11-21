@@ -17,7 +17,7 @@ enum class ValidationRegex(val regex: String) {
 class Validation : ValidationInterface {
     @RequiresApi(Build.VERSION_CODES.N)
     override fun isNameValid(name: String): Boolean {
-        if (name.isEmpty()) return false
+        if (name.isEmpty() || name.startsWith(" ")) return false
         else if (name.chars().anyMatch(Character::isLetter) && name.length >= 3) return true
         return false
     }

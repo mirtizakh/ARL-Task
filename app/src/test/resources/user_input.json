@@ -1,0 +1,36 @@
+{
+  "user_Input": {
+    "valid_Email": [
+      "disposable.style.email.with+symbol@example.com",
+      "example-indeed@strangeexample.com",
+      "chris.jone's@g.com",
+      "other.email-with-hyphen@example.com"
+    ],
+    "invalid_Email": [
+      "disposable.style.email.with+symbol@example.c",
+      "example-indeed@strange-example.c",
+      "chris.jone's@g",
+      "other.email-with-hyphen@example"
+    ],
+    "valid_Password": [
+      "Click123/*-",
+      "testing1T",
+      "@Tssssssss",
+      "aadas@dasd1"
+    ],
+    "invalid_Password": [
+      "test",
+      "Tsssss",
+      "121212"
+    ],
+    "valid_Name": [
+      "Irtiza",
+      "M.Irtiza",
+      "M Irtiza"
+    ],
+    "invalid_Name": [
+      "13123",
+      "  Irtiza"
+    ]
+  }
+}
