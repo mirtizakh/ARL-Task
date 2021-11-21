@@ -12,12 +12,14 @@ class SignupViewModel(
     private var validation: ValidationInterface,
     private var sessionManager: ISessionManager
 ) : BaseViewModel<SignupFragmentNavigator>() {
-
-
+    // region VARIABLES
     var liveDataEmail: MutableLiveData<String> = MutableLiveData()
     var liveDataPassword: MutableLiveData<String> = MutableLiveData()
     var liveDataConfirmPassword: MutableLiveData<String> = MutableLiveData()
     var liveDataName: MutableLiveData<String> = MutableLiveData()
+    // end region VARIABLES
+
+    // region PUBLIC methods
     fun validate(): Boolean {
         return validateName() && validateEmail() && validatePassword() && validateConfirmPassword()
     }
@@ -37,7 +39,9 @@ class SignupViewModel(
             }
         }
     }
+    // end region PUBLIC methods
 
+    // region PRIVATE methods
     private fun validatePassword(): Boolean {
         return if (validation.isPasswordValid(liveDataPassword.value?.trim() ?: String.empty)) {
             true
@@ -77,4 +81,5 @@ class SignupViewModel(
             false
         }
     }
+    // end region PRIVATE methods
 }

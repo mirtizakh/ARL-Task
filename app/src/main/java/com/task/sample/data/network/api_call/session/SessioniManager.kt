@@ -11,7 +11,11 @@ interface ISessionManager {
 }
 
 class SessionManager : ISessionManager {
+    // region VARIABLES
     private var auth: FirebaseAuth = FirebaseAuth.getInstance()
+    // end region VARIABLES
+
+    // region OVERRIDE methods
     override fun logoutUser(): Boolean {
         return false
     }
@@ -35,5 +39,5 @@ class SessionManager : ISessionManager {
     override fun signInUser(email: String, password: String, callBack: (Boolean) -> Unit) {
 
     }
-
+    // end region OVERRIDE methods
 }

@@ -78,6 +78,10 @@ dependencies {
 
     // Mockito framework
     testImplementation 'org.mockito:mockito-core:4.0.0'
+    testImplementation "io.mockk:mockk:1.10.0"
+
+    // Robolectric
+    testImplementation 'org.robolectric:robolectric:4.6.1'
 
     // Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"

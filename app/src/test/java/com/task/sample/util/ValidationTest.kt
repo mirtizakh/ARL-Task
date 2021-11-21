@@ -7,7 +7,6 @@ import org.junit.Before
 import org.junit.Test
 
 class ValidationTest {
-
     // region VARIABLES
     private lateinit var validation: Validation
     private var jsonObject: JsonObject? = null
@@ -52,7 +51,7 @@ class ValidationTest {
         validEmails?.let { emails ->
             for (email in emails) {
                 val result = validation.isEmailValid(email.asString)
-                Truth.assertThat(result).isFalse()
+                Truth.assertThat(result).isTrue()
             }
         }
     }
