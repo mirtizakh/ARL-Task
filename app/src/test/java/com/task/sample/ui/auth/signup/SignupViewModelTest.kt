@@ -1,8 +1,6 @@
 package com.task.sample.ui.auth.signup
 
 import com.google.common.truth.Truth
-import com.google.gson.JsonObject
-import com.task.sample.JsonReader
 import com.task.sample.mock.MockSessionManager
 import com.task.sample.util.Validation
 import org.junit.Before

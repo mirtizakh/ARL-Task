@@ -39,7 +39,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>(),
     }
 
     override fun signInSuccessfully() {
-        Toast.makeText(requireContext(), "Login", Toast.LENGTH_LONG).show()
+        (activity as MainActivity).navigate(R.id.action_loginFragment_to_dashboardFragment)
     }
 
     override fun showFieldsError(error: Int) {

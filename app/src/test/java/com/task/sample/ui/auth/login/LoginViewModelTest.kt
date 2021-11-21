@@ -2,8 +2,6 @@ package com.task.sample.ui.auth.login
 
 import com.google.common.truth.Truth
 import com.task.sample.mock.MockSessionManager
-import com.task.sample.ui.auth.signup.SignupFragmentNavigator
-import com.task.sample.ui.auth.signup.SignupViewModel
 import com.task.sample.util.Validation
 import org.junit.Before
 import org.junit.Test

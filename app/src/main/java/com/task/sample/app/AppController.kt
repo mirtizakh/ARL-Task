@@ -5,6 +5,8 @@ import com.task.sample.data.network.api_call.session.SessionManager
 import com.task.sample.dialog.DialogManager
 import com.task.sample.ui.auth.login.LoginViewModelFactory
 import com.task.sample.ui.auth.signup.SignupViewModelFactory
+import com.task.sample.ui.dashboard.DashboardViewModelFactory
+import com.task.sample.ui.splash.SplashViewModelFactory
 import com.task.sample.util.LogExceptions
 import com.task.sample.util.Validation
 import org.kodein.di.Kodein
@@ -29,6 +31,8 @@ class AppController : Application() {
             // ViewModelFactory
             bind() from singleton { SignupViewModelFactory(instance(), instance()) }
             bind() from singleton { LoginViewModelFactory(instance(), instance()) }
+            bind() from singleton { SplashViewModelFactory(instance()) }
+            bind() from singleton { DashboardViewModelFactory() }
 
         }
 

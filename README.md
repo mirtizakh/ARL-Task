@@ -1,5 +1,21 @@
 ## Table of contents
-* [Testcases](#Test-cases)
+* [General info](#General-info)
+* [Technologies](#Technologies)
+* [Test cases](#Test-cases)
+
+## General info
+This is an Android application that display a list of products like an ecommerce app. And also provide a product details UI.
+Also this app has a mechanism to allow user to add the products in the shopping cart for order placing.
+Login and signup feature also available by using Firebase authentication.
+
+## Technologies
+Project is created with:
+1- Retrofit
+2- Room Database
+3- Firebase Authentication
+4- Kodein Dependency Injection
+5- Coroutines
+6- Material Library
 
 ## Test cases
 Test cases of following classes are added

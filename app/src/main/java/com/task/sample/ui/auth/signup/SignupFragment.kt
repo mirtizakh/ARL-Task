@@ -40,7 +40,7 @@ class SignupFragment : BaseFragment<FragmentSignupBinding, SignupViewModel>(),
     }
 
     override fun signUpSuccessfully() {
-        Toast.makeText(requireContext(), "Signup", Toast.LENGTH_LONG).show()
+        (activity as MainActivity).navigate(R.id.action_signupFragment_to_dashboardFragment)
     }
 
     override fun showFieldsError(error: Int) {
