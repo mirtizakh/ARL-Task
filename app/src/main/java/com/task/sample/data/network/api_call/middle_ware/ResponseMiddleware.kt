@@ -3,6 +3,7 @@ package com.task.sample.data.network.api_call.middle_ware
 import com.task.sample.data.network.api_call.Resource
 import com.task.sample.data.network.response.response_parser.ResponseCodes
 import com.task.sample.data.network.response.response_parser.ResponseMessages
+import com.task.sample.util.ILogException
 import com.task.sample.util.LogExceptions
 import com.task.sample.util.empty
 import nye.health.data.network.api_call.api_request.ApiRequest
@@ -16,7 +17,7 @@ interface ResponseMiddlewareInterface {
 
 class ResponseMiddleware(
     var networkAvailableInterface: NetworkAvailableInterface,
-    var logException: LogExceptions
+    var logException: ILogException
 ) : ApiRequest(), ResponseMiddlewareInterface {
 
     override suspend fun <T> networkCall(call: suspend () -> Response<T>): Resource<T> {

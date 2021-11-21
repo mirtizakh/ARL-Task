@@ -36,6 +36,10 @@ class ProductCategoriesFragment :
         Toast.makeText(requireContext(), error, Toast.LENGTH_LONG).show()
     }
 
+    override fun showCategories() {
+
+    }
+
     /**
      * To show and hide of progress bar based on api call and response
      */

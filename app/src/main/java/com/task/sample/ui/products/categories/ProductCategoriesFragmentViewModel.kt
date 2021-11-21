@@ -7,9 +7,13 @@ import com.task.sample.R
 import com.task.sample.data.network.api_call.ResponseStatus
 import com.task.sample.data.repository.IProductRepository
 import com.task.sample.ui.base.BaseViewModel
+import com.task.sample.util.getViewModelScope
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-class ProductCategoriesFragmentViewModel(var productRepository: IProductRepository) :
+class ProductCategoriesFragmentViewModel(var productRepository: IProductRepository,
+                                         private val coroutineScopeProvider: CoroutineScope? = null,
+                                         ) :
     BaseViewModel<ProductCategoriesFragmentNavigator>() {
     // region VARIABLES
 
@@ -17,13 +21,14 @@ class ProductCategoriesFragmentViewModel(var productRepository: IProductReposito
 
     // region PUBLIC methods
     fun getProductCategories() {
-        viewModelScope.launch {
+        getViewModelScope(coroutineScopeProvider).launch {
             getNavigator()?.setVisibilityForProgress(View.VISIBLE)
             val response = productRepository.productCategories()
             when (response.status) {
                 ResponseStatus.SUCCESS -> {
                     if (response.responseData is JsonArray) {
                         getNavigator()?.setVisibilityForProgress(View.GONE)
+                        getNavigator()?.showCategories()
                     } else {
                         showError(R.string.something_went_wrong)
                     }
