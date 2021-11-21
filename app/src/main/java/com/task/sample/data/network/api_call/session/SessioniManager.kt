@@ -30,14 +30,22 @@ class SessionManager : ISessionManager {
                 if (task.isSuccessful) {
                     callBack(true)
                 } else {
-                    // If sign in fails
+                    // If sign up fails
                     callBack(false)
                 }
             }
     }
 
     override fun signInUser(email: String, password: String, callBack: (Boolean) -> Unit) {
-
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    callBack(true)
+                } else {
+                    // If sign in fails
+                    callBack(false)
+                }
+            }
     }
     // end region OVERRIDE methods
 }

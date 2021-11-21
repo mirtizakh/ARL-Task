@@ -4,9 +4,11 @@ import android.view.View
 import android.widget.Toast
 import com.task.sample.BR
 import com.task.sample.R
+import com.task.sample.activity.MainActivity
 import com.task.sample.app.AppController
 import com.task.sample.databinding.FragmentSignupBinding
 import com.task.sample.ui.base.BaseFragment
+import com.task.sample.util.mayNavigate
 import org.kodein.di.generic.instance
 
 class SignupFragment : BaseFragment<FragmentSignupBinding, SignupViewModel>(),
@@ -20,7 +22,7 @@ class SignupFragment : BaseFragment<FragmentSignupBinding, SignupViewModel>(),
     override val viewModel = SignupViewModel::class.java
 
     override val viewModelFactory: SignupViewModelFactory by AppController.kodein().instance()
-
+    // end region VARIABLES
 
     // region OVERRIDE Methods
     override fun initUserInterface(view: View?) {
@@ -30,6 +32,10 @@ class SignupFragment : BaseFragment<FragmentSignupBinding, SignupViewModel>(),
             if (injectedViewModel.validate()) {
                 injectedViewModel.signupUser()
             }
+        }
+
+        viewDataBinding.tvLogin.setOnClickListener {
+            redirectToLoginScreen()
         }
     }
 
@@ -47,7 +53,12 @@ class SignupFragment : BaseFragment<FragmentSignupBinding, SignupViewModel>(),
     override fun setVisibilityForProgress(visibility: Int) {
         viewDataBinding.progressBar.visibility = visibility
     }
-    // end region VARIABLES
 
+    // end region OVERRIDE
 
+    private fun redirectToLoginScreen() {
+        if (mayNavigate(R.id.signupFragment)) {
+            (activity as MainActivity).navigate(R.id.action_signupFragment_to_loginFragment)
+        }
+    }
 }

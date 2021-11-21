@@ -17,7 +17,6 @@ class SignupViewModelTest {
     private lateinit var validation: Validation
     private lateinit var sessionManager: MockSessionManager
     private lateinit var signupViewModel: SignupViewModel
-    private var jsonObject: JsonObject? = null
     private lateinit var signupFragmentNavigator: SignupFragmentNavigator
     // end region VARIABLES
 
@@ -29,8 +28,6 @@ class SignupViewModelTest {
         signupViewModel = SignupViewModel(validation, sessionManager)
         signupFragmentNavigator = mock(SignupFragmentNavigator::class.java)
         signupViewModel.setNavigator(signupFragmentNavigator)
-        jsonObject = JsonReader.readJson(validation, "user_input.json")
-        jsonObject = jsonObject?.get("user_Input")?.asJsonObject
     }
     // end region SETUP
 

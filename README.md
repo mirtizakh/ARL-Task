@@ -3,7 +3,7 @@
 
 ## Test cases
 Test cases of following classes are added
-### SignupViewModel.kt
+#### SignupViewModel.kt
  6 test cases are added for this class with code coverage of 94% lines
 * signupUser_whenUserSuccessfullySignup_checkNavigatorSuccessfullyFunctionsCalls1Time
 * signupUser_whenUserIsNotSuccessfullySignup_checkNavigatorShowFieldsErrorFunctionsCalls1Time
@@ -12,7 +12,7 @@ Test cases of following classes are added
 * validate_whenPasswordIsNotValid_returnsFalseAndNavigatorShowFieldsErrorFunctionsCalls1Time
 * validate_whenAllFieldsAreValid_returnsTrueAndNavigatorShowFieldsErrorFunctionsNeverCalls
 
-### Validation.kt
+#### Validation.kt
  6 test cases are added for this class with code coverage of 100% lines
 * isNameValid_checkValidNames_allNamesShouldBeAccept()
 * isNameValid_checkInvalidNames_allNamesShouldNotBeAccept()
@@ -20,4 +20,12 @@ Test cases of following classes are added
 * isEmailValid_checkInvalidEmails_allEmailsShouldNotBeAccept()
 * isPasswordValid_checkValidPasswords_allPasswordsShouldBeAccept()
 * isPasswordValid_checkInvalidPasswords_allPasswordsShouldNotBeAccept()
+
+#### LoginViewModel.kt
+ 4 test cases are added for this class with code coverage of 96% lines
+* loginUser_whenUserSuccessfullyLogin_checkNavigatorSuccessfullyFunctionsCalls1Time
+* loginUser_whenUserIsNotSuccessfullyLogin_checkNavigatorShowFieldsErrorFunctionsCalls1Time()
+* validate_whenEmailIsNotValid_returnsFalseAndNavigatorShowFieldsErrorFunctionsCalls1Time()
+* validate_whenPasswordIsNotValid_returnsFalseAndNavigatorShowFieldsErrorFunctionsCalls1Time()
+
 
