@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "547456962050",
+    "project_id": "arltask",
+    "storage_bucket": "arltask.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:547456962050:android:55d3c6eda7f350d024e11b",
+        "android_client_info": {
+          "package_name": "com.task.sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "547456962050-l3j9emle6917r664dfk6j5v00tu7f1sj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_0tQNcwMvNp8SVgtJbmOK-wTxNpVzm9s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "547456962050-l3j9emle6917r664dfk6j5v00tu7f1sj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
