@@ -10,6 +10,7 @@
     <string name="please_enter_correct_password">Please enter correct password with minimum 8 characters length</string>
     <string name="please_enter_correct_name">Please enter correct name with minimum 3 characters length</string>
     <string name="please_enter_correct_email">Please enter correct email</string>
+    <string name="network_error">Please check your internet connection</string>
 
     <!-- Authentication -->
     <string name="enter_name">Enter Name</string>
