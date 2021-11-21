@@ -8,7 +8,8 @@ import com.task.sample.databinding.FragmentSignupBinding
 import com.task.sample.ui.base.BaseFragment
 import org.kodein.di.generic.instance
 
-class SignupFragment : BaseFragment<FragmentSignupBinding, SignupViewModel>() {
+class SignupFragment : BaseFragment<FragmentSignupBinding, SignupViewModel>(),
+    SignupFragmentNavigator {
 
     // region VARIABLES
     override val layoutId = R.layout.fragment_signup
@@ -22,8 +23,24 @@ class SignupFragment : BaseFragment<FragmentSignupBinding, SignupViewModel>() {
 
     // region OVERRIDE Methods
     override fun initUserInterface(view: View?) {
+        injectedViewModel.setNavigator(this)
+    }
+
+    override fun signUpSuccessfully() {
 
     }
+
+    override fun showFieldsError(error: Int) {
+
+    }
+
+    /**
+     * To show and hide of progress bar based on api call and response
+     */
+    override fun setVisibilityForProgress(visibility: Int) {
+        viewDataBinding.progressBar.visibility = visibility
+    }
     // end region VARIABLES
+
 
 }

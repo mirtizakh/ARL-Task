@@ -1,10 +1,13 @@
 package com.task.sample.app
 
 import android.app.Application
+import com.task.sample.data.network.api_call.session.SessionManager
 import com.task.sample.dialog.DialogManager
 import com.task.sample.ui.auth.signup.SignupViewModelFactory
+import com.task.sample.util.Validation
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
+import org.kodein.di.generic.instance
 import org.kodein.di.generic.singleton
 
 class AppController : Application() {
@@ -15,11 +18,13 @@ class AppController : Application() {
     companion object {
         private lateinit var instance: AppController
 
-        val kodein = Kodein.lazy {
+        private val kodein = Kodein.lazy {
             bind() from singleton { DialogManager() }
+            bind() from singleton { Validation() }
+            bind() from singleton { SessionManager() }
 
             // ViewModelFactory
-            bind() from singleton { SignupViewModelFactory() }
+            bind() from singleton { SignupViewModelFactory(instance(), instance()) }
 
         }
 

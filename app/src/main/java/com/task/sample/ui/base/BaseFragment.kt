@@ -52,5 +52,6 @@ abstract class BaseFragment<VDB : ViewDataBinding, BVM : BaseViewModel<*>> : Fra
     }
     // end region LIFECYCLE
 
+
     protected abstract fun initUserInterface(view: View?)
 }
