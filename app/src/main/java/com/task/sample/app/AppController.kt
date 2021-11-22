@@ -4,6 +4,7 @@ import android.app.Application
 import com.task.sample.activity.MainActivityViewModelFactory
 import com.task.sample.data.network.api_call.api_manager.ApiManager
 import com.task.sample.data.network.api_call.middle_ware.ResponseMiddleware
+import com.task.sample.data.network.api_call.network_handler.NetworkAvailable
 import com.task.sample.data.network.api_call.session.SessionManager
 import com.task.sample.data.network.interceptor.NetworkConnectionInterceptor
 import com.task.sample.data.repository.ProductRepository
@@ -12,10 +13,10 @@ import com.task.sample.ui.auth.login.LoginViewModelFactory
 import com.task.sample.ui.auth.signup.SignupViewModelFactory
 import com.task.sample.ui.cart.CartFragmentViewModelFactory
 import com.task.sample.ui.products.categories.ProductCategoriesFragmentViewModelFactory
+import com.task.sample.ui.products.product_list.ProductsListFragmentViewModelFactory
 import com.task.sample.ui.splash.SplashViewModelFactory
 import com.task.sample.util.LogExceptions
 import com.task.sample.util.Validation
-import com.task.sample.data.network.api_call.network_handler.NetworkAvailable
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.instance
@@ -44,6 +45,7 @@ class AppController : Application() {
             bind() from singleton { ProductCategoriesFragmentViewModelFactory(instance()) }
             bind() from singleton { CartFragmentViewModelFactory() }
             bind() from singleton { MainActivityViewModelFactory() }
+            bind() from singleton { ProductsListFragmentViewModelFactory(instance()) }
 
             // Repository
             bind() from singleton { ProductRepository(instance(), instance()) }

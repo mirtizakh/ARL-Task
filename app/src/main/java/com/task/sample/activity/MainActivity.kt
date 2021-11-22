@@ -1,5 +1,6 @@
 package com.task.sample.activity
 
+import android.os.Bundle
 import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -33,11 +34,18 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainActivityViewModel>() 
 
     // region PUBLIC methods
     // This function is used to do navigation between screens
-    fun navigate(destinationId: Int) {
+    fun navigate(destinationId: Int, bundle: Bundle? = null, popBackstack: Boolean = false) {
         try {
-            if (navController != null) {
-                navController?.navigate(destinationId)
+            navController?.currentDestination?.id?.let {
+                if (navController?.currentDestination?.id == destinationId) {
+                    return
+                }
             }
+            if (popBackstack) navController?.popBackStack(R.id.nav_graph, true)
+            if (bundle != null) navController?.navigate(
+                destinationId, bundle
+            )
+            else navController?.navigate(destinationId)
         } catch (e: Exception) {
             var lineNumber = ""
             Thread.currentThread().stackTrace[2]?.let { t ->
@@ -58,11 +66,11 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainActivityViewModel>() 
         findViewById<BottomNavigationView>(R.id.bottomNavigationView).setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.products -> {
-                    checkNavigationOfBottomView(R.id.productCategoriesFragment)
+                    navigate(R.id.productCategoriesFragment,popBackstack = true)
                     true
                 }
                 R.id.cart -> {
-                    checkNavigationOfBottomView(R.id.cartFragment)
+                    navigate(R.id.cartFragment,popBackstack = true)
                     true
                 }
                 else -> {
@@ -70,14 +78,6 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainActivityViewModel>() 
                     true
                 }
             }
-        }
-    }
-
-    private fun checkNavigationOfBottomView(destinationId: Int) {
-        if (navController?.currentDestination?.id == destinationId) {
-            return
-        } else {
-            navigate(destinationId)
         }
     }
     // region PRIVATE methods

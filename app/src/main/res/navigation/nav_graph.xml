@@ -57,10 +57,19 @@
         android:id="@+id/productCategoriesFragment"
         android:name="com.task.sample.ui.products.categories.ProductCategoriesFragment"
         android:label="DashboardFragment"
-        tools:layout="@layout/fragment_product_categories" />
+        tools:layout="@layout/fragment_product_categories">
+        <action
+            android:id="@+id/action_productCategoriesFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/cartFragment"
         android:name="com.task.sample.ui.cart.CartFragment"
         android:label="CartFragment"
         tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.task.sample.ui.products.product_list.ProductListFragment"
+        android:label="ProductListFragment"
+        tools:layout="@layout/fragment_product_categories" />
 </navigation>

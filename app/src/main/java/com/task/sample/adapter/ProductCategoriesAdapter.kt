@@ -15,6 +15,7 @@ class ProductCategoriesAdapter(
 
     class MyViewHolder(view: View?) : RecyclerView.ViewHolder(view!!) {
         val tvCategoryName: TextView = itemView.findViewById(R.id.tvCategoryName)
+        val textDetails: TextView = itemView.findViewById(R.id.textDetails)
     }
 
     override
@@ -30,6 +31,7 @@ class ProductCategoriesAdapter(
         var item = listItem?.asString
         item = item?.substring(0, 1)?.uppercase() + item?.substring(1)?.lowercase()
         holder.tvCategoryName.text = item
+        holder.textDetails.text = holder.itemView.context.getString(R.string.view_products)
         holder.itemView.setOnClickListener(clickListener)
     }
 
@@ -42,5 +44,4 @@ class ProductCategoriesAdapter(
     fun getItemCount(): Int {
         return listArray?.size() ?: 0
     }
-
 }

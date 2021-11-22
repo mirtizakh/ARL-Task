@@ -31,4 +31,8 @@
     <string name="cart">Cart</string>
     <string name="logout">Logout</string>
     <string name="settings">Settings</string>
+
+    <!-- Product Screens -->
+    <string name="view_products">View Products</string>
+    <string name="view_product">View Product</string>
 </resources>

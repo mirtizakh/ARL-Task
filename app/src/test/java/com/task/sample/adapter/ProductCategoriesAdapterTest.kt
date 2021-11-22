@@ -35,5 +35,5 @@ class ProductCategoriesAdapterTest {
     fun itemCount_checkItemCountInAdapter_countShouldBe4() {
         Truth.assertThat(productCategoriesAdapterTest.itemCount).isEqualTo(4)
     }
-
+    // end region TESTCASES
 }
