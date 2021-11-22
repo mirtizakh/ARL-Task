@@ -71,5 +71,14 @@
         android:id="@+id/productListFragment"
         android:name="com.task.sample.ui.products.product_list.ProductListFragment"
         android:label="ProductListFragment"
-        tools:layout="@layout/fragment_product_categories" />
+        tools:layout="@layout/fragment_product_categories" >
+        <action
+            android:id="@+id/action_productListFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        tools:layout="@layout/fragment_product_details"
+        android:name="com.task.sample.ui.products.product_details.ProductDetailsFragment"
+        android:label="ProductDetailsFragment" />
 </navigation>

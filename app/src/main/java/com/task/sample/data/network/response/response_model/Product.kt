@@ -2,8 +2,10 @@ package com.task.sample.data.network.response.response_model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
-class Product {
+
+class Product:Serializable{
     @SerializedName("id")
     @Expose
     var id: Int? = null
@@ -27,6 +29,8 @@ class Product {
     @SerializedName("image")
     @Expose
     var image: String? = null
+
+    var count: Int? = null
 
     @SerializedName("rating")
     @Expose

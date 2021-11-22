@@ -35,4 +35,10 @@
     <!-- Product Screens -->
     <string name="view_products">View Products</string>
     <string name="view_product">View Product</string>
+    <string name="product_details">Product Details</string>
+    <string name="product_title">Title : </string>
+    <string name="product_price">Price : </string>
+    <string name="product_description">Description : </string>
+    <string name="product_category">Category : </string>
+    <string name="product_rating">Rating : </string>
 </resources>

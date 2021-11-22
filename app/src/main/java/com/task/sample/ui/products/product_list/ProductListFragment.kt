@@ -1,5 +1,6 @@
 package com.task.sample.ui.products.product_list
 
+import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -39,11 +40,13 @@ class ProductListFragment :
             RecyclerView.VERTICAL
         adapter = ProductListAdapter { view ->
             viewDataBinding.rvCategories.findContainingViewHolder(view)?.adapterPosition?.let { position ->
-                Toast.makeText(
-                    requireContext(),
-                    list.get(position).title,
-                    Toast.LENGTH_LONG
-                ).show()
+                val bundle = Bundle().apply {
+                    putSerializable("product", list.get(position))
+                }
+                (activity as MainActivity).navigate(
+                    R.id.action_productListFragment_to_productDetailsFragment,
+                    bundle
+                )
             }
         }
         viewDataBinding.rvCategories.adapter = adapter

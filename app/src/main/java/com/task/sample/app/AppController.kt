@@ -13,6 +13,7 @@ import com.task.sample.ui.auth.login.LoginViewModelFactory
 import com.task.sample.ui.auth.signup.SignupViewModelFactory
 import com.task.sample.ui.cart.CartFragmentViewModelFactory
 import com.task.sample.ui.products.categories.ProductCategoriesFragmentViewModelFactory
+import com.task.sample.ui.products.product_details.ProductsDetailsFragmentViewModelFactory
 import com.task.sample.ui.products.product_list.ProductsListFragmentViewModelFactory
 import com.task.sample.ui.splash.SplashViewModelFactory
 import com.task.sample.util.LogExceptions
@@ -46,6 +47,7 @@ class AppController : Application() {
             bind() from singleton { CartFragmentViewModelFactory() }
             bind() from singleton { MainActivityViewModelFactory() }
             bind() from singleton { ProductsListFragmentViewModelFactory(instance()) }
+            bind() from singleton { ProductsDetailsFragmentViewModelFactory(instance()) }
 
             // Repository
             bind() from singleton { ProductRepository(instance(), instance()) }
