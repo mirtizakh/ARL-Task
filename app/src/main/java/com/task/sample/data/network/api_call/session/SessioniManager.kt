@@ -17,7 +17,8 @@ class SessionManager : ISessionManager {
 
     // region OVERRIDE methods
     override fun logoutUser(): Boolean {
-        return false
+         auth.signOut()
+        return true
     }
 
     override fun isLogin(): Boolean {

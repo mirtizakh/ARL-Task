@@ -18,4 +18,6 @@ class Database(private val database: AppDatabase) : DatabaseInterface {
         database.getProductDao().getProductCount(productId)
 
     override suspend fun deleteProduct(productId: Int) = database.getProductDao().delete(productId)
+    override suspend fun deleteAllProducts() = database.getProductDao().deleteAll()
+
 }

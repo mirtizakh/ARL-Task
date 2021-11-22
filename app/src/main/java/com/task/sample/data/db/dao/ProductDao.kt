@@ -23,6 +23,10 @@ interface ProductDao {
     @Query("DELETE FROM $product_table where id = :productId")
     suspend fun delete(productId: Int)
 
+    @NonNull
+    @Query("DELETE FROM $product_table")
+    suspend fun deleteAll()
+
     @Update
     suspend fun editProduct(product: Product)
 }

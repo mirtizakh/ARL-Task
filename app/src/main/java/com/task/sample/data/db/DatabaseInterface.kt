@@ -8,4 +8,5 @@ interface DatabaseInterface {
     suspend fun getProductsFromDB(): List<Product>?
     suspend fun getProductCount(productId: Int): Int?
     suspend fun deleteProduct(productId: Int)
+    suspend fun deleteAllProducts()
 }

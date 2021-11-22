@@ -13,14 +13,16 @@ import com.task.sample.R
 import com.task.sample.app.AppController
 import com.task.sample.databinding.ActivityMainBinding
 import com.task.sample.databinding.BadgeViewBinding
+import com.task.sample.dialog.DialogManager
 import com.task.sample.ui.base.BaseActivity
 import com.task.sample.util.LogExceptions
 import org.kodein.di.generic.instance
 
-class MainActivity : BaseActivity<ActivityMainBinding, MainActivityViewModel>() {
+class MainActivity : BaseActivity<ActivityMainBinding, MainActivityViewModel>() , MainActivityNavigator {
     // region VARIABLES
     override val layoutId: Int = R.layout.activity_main
     override val viewModelFactory: MainActivityViewModelFactory by AppController.kodein().instance()
+    private val dialogManager: DialogManager by AppController.kodein().instance()
     override val viewModel = MainActivityViewModel::class.java
     override fun getBindingVariable() = BR._all
     var navController: NavController? = null
@@ -31,11 +33,21 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainActivityViewModel>() 
 
     // region OVERRIDE methods
     override fun initUserInterface() {
+        injectedViewModel.setNavigator(this)
         navHost = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHost.navController
         setupBottomNavigationBar()
+        injectedViewModel.getProductsCount()
     }
-    // end region LIFECYCLE
+
+    override fun logoutSuccessfully() {
+        navigate(R.id.splashFragment,  popBackstack = true)
+    }
+
+    override fun setProductCountValue(count: Int) {
+        updateBadgeForCart(count)
+    }
+    // end region OVERRIDE methods
 
     // region PUBLIC methods
     // This function is used to do navigation between screens
@@ -96,11 +108,21 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainActivityViewModel>() 
                     true
                 }
                 else -> {
-
+                    showLogoutDialog()
                     true
                 }
             }
         }
+    }
+    private fun showLogoutDialog(){
+        dialogManager.twoButtonDialog(this,getString(R.string.logout_title),
+            getString(R.string.logout_message) , getString(R.string.ok) , getString(R.string.cancel),
+            object :DialogManager.AlertDialogListener{
+                override fun onPositiveButtonClicked(){
+                    injectedViewModel.logoutUser()
+                }
+            })
+
     }
     // region PRIVATE methods
 }

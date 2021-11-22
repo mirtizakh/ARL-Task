@@ -4,6 +4,8 @@
     <!-- Dialog -->
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
+    <string name="logout_message">Are you sure you want to logout?</string>
+    <string name="logout_title">Logout</string>
 
     <!-- Error -->
     <string name="something_went_wrong">Something went wrong</string>
