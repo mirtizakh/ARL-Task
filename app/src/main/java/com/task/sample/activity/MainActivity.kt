@@ -55,7 +55,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainActivityViewModel>() 
 
     // region PRIVATE methods
     private fun setupBottomNavigationBar() {
-        findViewById<BottomNavigationView>(R.id.bottomNavigationView).setOnItemSelectedListener { it ->
+        findViewById<BottomNavigationView>(R.id.bottomNavigationView).setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.products -> {
                     checkNavigationOfBottomView(R.id.productCategoriesFragment)

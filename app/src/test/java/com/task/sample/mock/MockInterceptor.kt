@@ -9,7 +9,7 @@ import okhttp3.ResponseBody.Companion.toResponseBody
 import java.io.IOException
 import java.io.InputStream
 
-class MockInterceptor()  : Interceptor {
+class MockInterceptor : Interceptor {
     companion object{
         var fileName = String.empty
     }

@@ -15,7 +15,7 @@ import com.task.sample.ui.products.categories.ProductCategoriesFragmentViewModel
 import com.task.sample.ui.splash.SplashViewModelFactory
 import com.task.sample.util.LogExceptions
 import com.task.sample.util.Validation
-import nye.health.data.network.api_call.network_handler.NetworkAvailable
+import com.task.sample.data.network.api_call.network_handler.NetworkAvailable
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.instance

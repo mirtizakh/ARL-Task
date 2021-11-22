@@ -1,4 +1,4 @@
-package nye.health.data.network.api_call.network_handler
+package com.task.sample.data.network.api_call.network_handler
 
 import android.content.Context
 import android.net.ConnectivityManager

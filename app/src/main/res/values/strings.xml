@@ -11,6 +11,7 @@
     <string name="please_enter_correct_name">Please enter correct name with minimum 3 characters length</string>
     <string name="please_enter_correct_email">Please enter correct email</string>
     <string name="network_error">Please check your internet connection</string>
+    <string name="no_categories">No categories are found</string>
 
     <!-- Authentication -->
     <string name="enter_name">Enter Name</string>
