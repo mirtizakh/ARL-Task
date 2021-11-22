@@ -21,8 +21,15 @@ class CartFragmentViewModel(private var databaseInterface: DatabaseInterface) :
             productsCount?.let {
                 getNavigator()?.showCategories(ArrayList(it))
                 getNavigator()?.setVisibilityForProgress(View.GONE)
-                val totalPrice = databaseInterface.getTotalPrice()
-                getNavigator()?.showTotalPrice(totalPrice)
+                if(productsCount.size > 0){
+                    val totalPrice = databaseInterface.getTotalPrice()
+                    totalPrice?.let {
+                        getNavigator()?.showTotalPrice(totalPrice)
+                    }
+                } else {
+                    getNavigator()?.showError(R.string.no_cart)
+                    getNavigator()?.setVisibilityForProgress(View.GONE)
+                }
             } ?: kotlin.run {
                 getNavigator()?.showError(R.string.no_cart)
                 getNavigator()?.setVisibilityForProgress(View.GONE)
