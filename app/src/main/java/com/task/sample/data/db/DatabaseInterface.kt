@@ -9,4 +9,5 @@ interface DatabaseInterface {
     suspend fun getProductCount(productId: Int): Int?
     suspend fun deleteProduct(productId: Int)
     suspend fun deleteAllProducts()
+    suspend fun getTotalPrice(): Double
 }

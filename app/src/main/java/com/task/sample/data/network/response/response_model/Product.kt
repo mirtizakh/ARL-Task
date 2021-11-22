@@ -18,9 +18,9 @@ class Product : Serializable {
     @ColumnInfo(name = "id")
     var id: Int? = null
 
-    @Ignore
     @SerializedName("title")
     @Expose
+    @ColumnInfo(name = "title")
     var title: String? = null
 
     @SerializedName("price")

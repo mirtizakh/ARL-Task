@@ -14,6 +14,7 @@
     <string name="please_enter_correct_email">Please enter correct email</string>
     <string name="network_error">Please check your internet connection</string>
     <string name="no_categories">No categories are found</string>
+    <string name="no_cart">You donot have any product in cart</string>
 
     <!-- Authentication -->
     <string name="enter_name">Enter Name</string>

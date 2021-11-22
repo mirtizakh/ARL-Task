@@ -29,4 +29,7 @@ interface ProductDao {
 
     @Update
     suspend fun editProduct(product: Product)
+
+    @Query("SELECT SUM(totalPrice) FROM $product_table")
+    suspend fun getTotalPrice(): Double
 }

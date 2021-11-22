@@ -12,12 +12,13 @@ class Database(private val database: AppDatabase) : DatabaseInterface {
     override suspend fun updateProductToDB(product: Product) =
         database.getProductDao().editProduct(product)
 
-    override suspend fun getProductsFromDB(): List<Product> = database.getProductDao().getProducts()
+    override suspend fun getProductsFromDB() = database.getProductDao().getProducts()
 
     override suspend fun getProductCount(productId: Int) =
         database.getProductDao().getProductCount(productId)
 
     override suspend fun deleteProduct(productId: Int) = database.getProductDao().delete(productId)
     override suspend fun deleteAllProducts() = database.getProductDao().deleteAll()
+    override suspend fun getTotalPrice() = database.getProductDao().getTotalPrice()
 
 }

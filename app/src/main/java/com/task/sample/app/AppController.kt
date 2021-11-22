@@ -50,8 +50,8 @@ class AppController : Application() {
             bind() from singleton { LoginViewModelFactory(instance(), instance()) }
             bind() from singleton { SplashViewModelFactory(instance()) }
             bind() from singleton { ProductCategoriesFragmentViewModelFactory(instance()) }
-            bind() from singleton { CartFragmentViewModelFactory() }
-            bind() from singleton { MainActivityViewModelFactory(instance(),instance()) }
+            bind() from singleton { CartFragmentViewModelFactory(instance()) }
+            bind() from singleton { MainActivityViewModelFactory(instance(), instance()) }
             bind() from singleton { ProductsListFragmentViewModelFactory(instance()) }
             bind() from singleton { ProductsDetailsFragmentViewModelFactory(instance()) }
 
