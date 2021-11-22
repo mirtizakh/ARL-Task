@@ -2,6 +2,9 @@ package com.task.sample.app
 
 import android.app.Application
 import com.task.sample.activity.MainActivityViewModelFactory
+import com.task.sample.data.db.ActualRoomDatabase
+import com.task.sample.data.db.AppDatabase
+import com.task.sample.data.db.Database
 import com.task.sample.data.network.api_call.api_manager.ApiManager
 import com.task.sample.data.network.api_call.middle_ware.ResponseMiddleware
 import com.task.sample.data.network.api_call.network_handler.NetworkAvailable
@@ -39,13 +42,16 @@ class AppController : Application() {
             bind() from singleton { LogExceptions() }
             bind() from singleton { NetworkAvailable() }
             bind() from singleton { ResponseMiddleware(instance(), instance()) }
+            bind() from singleton { AppDatabase(ActualRoomDatabase(instance)) }
+            bind() from singleton { Database(instance()) }
+
             // ViewModelFactory
             bind() from singleton { SignupViewModelFactory(instance(), instance()) }
             bind() from singleton { LoginViewModelFactory(instance(), instance()) }
             bind() from singleton { SplashViewModelFactory(instance()) }
             bind() from singleton { ProductCategoriesFragmentViewModelFactory(instance()) }
             bind() from singleton { CartFragmentViewModelFactory() }
-            bind() from singleton { MainActivityViewModelFactory() }
+            bind() from singleton { MainActivityViewModelFactory(instance(),instance()) }
             bind() from singleton { ProductsListFragmentViewModelFactory(instance()) }
             bind() from singleton { ProductsDetailsFragmentViewModelFactory(instance()) }
 

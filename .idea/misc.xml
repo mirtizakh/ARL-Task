@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Irtiza/AR/ARL-Task/app/src/main/res/drawable/badge_bg.xml" value="0.190625" />
         <entry key="..\:/Irtiza/AR/ARL-Task/app/src/main/res/drawable/ic_add.xml" value="0.2546875" />
         <entry key="..\:/Irtiza/AR/ARL-Task/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2546875" />
         <entry key="..\:/Irtiza/AR/ARL-Task/app/src/main/res/drawable/ic_cart.xml" value="0.240625" />
@@ -15,6 +16,7 @@
         <entry key="..\:/Irtiza/AR/ARL-Task/app/src/main/res/drawable/ic_round_bg.xml" value="0.2703125" />
         <entry key="..\:/Irtiza/AR/ARL-Task/app/src/main/res/drawable/ic_round_fill.xml" value="0.2546875" />
         <entry key="..\:/Irtiza/AR/ARL-Task/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Irtiza/AR/ARL-Task/app/src/main/res/layout/badge_view.xml" value="0.17447916666666666" />
         <entry key="..\:/Irtiza/AR/ARL-Task/app/src/main/res/layout/category_shrimmer.xml" value="0.25416666666666665" />
         <entry key="..\:/Irtiza/AR/ARL-Task/app/src/main/res/layout/fragment_cart.xml" value="0.1" />
         <entry key="..\:/Irtiza/AR/ARL-Task/app/src/main/res/layout/fragment_dashboard.xml" value="0.1743659420289855" />

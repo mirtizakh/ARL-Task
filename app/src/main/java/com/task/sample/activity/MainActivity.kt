@@ -2,13 +2,17 @@ package com.task.sample.activity
 
 import android.os.Bundle
 import android.view.View
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.task.sample.BR
 import com.task.sample.R
 import com.task.sample.app.AppController
 import com.task.sample.databinding.ActivityMainBinding
+import com.task.sample.databinding.BadgeViewBinding
 import com.task.sample.ui.base.BaseActivity
 import com.task.sample.util.LogExceptions
 import org.kodein.di.generic.instance
@@ -22,6 +26,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainActivityViewModel>() 
     var navController: NavController? = null
     private lateinit var navHost: NavHostFragment
     private val logException: LogExceptions by AppController.kodein().instance()
+    private var notificationsBadge: BadgeViewBinding? = null
     // end region VARIABLES
 
     // region OVERRIDE methods
@@ -58,6 +63,23 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainActivityViewModel>() 
 
     fun setVisibilityOfBottomView(visibility: Int) {
         findViewById<View>(R.id.bottomNavigationView).visibility = visibility
+    }
+
+    fun updateBadgeForCart(count: Int) {
+            if (notificationsBadge == null) {
+                val bottomNavigationMenuView =
+                    viewDataBinding.bottomNavigationView.getChildAt(0) as BottomNavigationMenuView
+                val item = bottomNavigationMenuView.getChildAt(0) as BottomNavigationItemView
+                notificationsBadge =
+                    DataBindingUtil.inflate(layoutInflater, R.layout.badge_view, item, false)
+                item.addView(notificationsBadge?.root)
+            }
+            notificationsBadge?.textViewNotificationsBadge?.text = count.toString()
+        if (count == 0) {
+            notificationsBadge?.root?.visibility = View.GONE
+        } else {
+            notificationsBadge?.root?.visibility = View.VISIBLE
+        }
     }
     // end region PUBLIC methods
 

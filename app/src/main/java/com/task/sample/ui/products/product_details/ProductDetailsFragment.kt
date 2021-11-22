@@ -21,7 +21,6 @@ class ProductDetailsFragment :
 
     // region VARIABLES
     override val layoutId = R.layout.fragment_product_details
-    private lateinit var product: Product
     override fun getBindingVariable() = BR._all
 
     override val viewModel = ProductsDetailsFragmentViewModel::class.java
@@ -35,12 +34,11 @@ class ProductDetailsFragment :
         injectedViewModel.setNavigator(this)
         (activity as MainActivity).setVisibilityOfBottomView(View.VISIBLE)
 
-        injectedViewModel.getProductCount()
-
         arguments?.let { arg ->
             if (arg.containsKey("product")) {
-                product = arg.getSerializable("product") as Product
-                setDetails(product)
+                injectedViewModel.product = arg.getSerializable("product") as Product
+                setDetails(injectedViewModel.product)
+                injectedViewModel.getProductCount()
             }
         }
 
@@ -50,6 +48,8 @@ class ProductDetailsFragment :
         viewDataBinding.icMinus.setOnClickListener {
             injectedViewModel.minusCountValue()
         }
+
+        injectedViewModel.getProductsCount()
     }
 
     override fun showError(error: Int) {
@@ -58,6 +58,10 @@ class ProductDetailsFragment :
 
     override fun setCountValue(count: String) {
         viewDataBinding.tvCount.text = count
+    }
+
+    override fun setProductCountValue(count: Int) {
+        (activity as MainActivity).updateBadgeForCart(count)
     }
 
     // end region OVERRIDE Methods
