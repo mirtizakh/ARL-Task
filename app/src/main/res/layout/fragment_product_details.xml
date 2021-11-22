@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,8 +16,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/icProduct"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/icProduct"
-             />
+            app:layout_constraintTop_toTopOf="@+id/icProduct" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/icProduct"
@@ -31,8 +29,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/icAdd"
-            android:layout_width="40dp"
-            android:layout_height="20dp"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
             android:background="@drawable/ic_round_fill"
             android:src="@drawable/ic_add"
             app:layout_constraintStart_toStartOf="@+id/tvTitle"
@@ -41,12 +39,11 @@
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvCount"
             android:layout_width="0dp"
-            android:gravity="center"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:text="0"
-            android:textSize="15sp"
+            android:gravity="center"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/icAdd"
             app:layout_constraintEnd_toStartOf="@+id/icMinus"
@@ -55,8 +52,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/icMinus"
-            android:layout_width="40dp"
-            android:layout_height="20dp"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
             android:background="@drawable/ic_round_fill"
             android:src="@drawable/ic_remove"
             app:layout_constraintEnd_toEndOf="@+id/tvTitle"
@@ -66,7 +63,7 @@
             android:id="@+id/tvProductDetails"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_margin="10dp"
+            android:layout_margin="20dp"
             android:text="@string/product_details"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -35,16 +35,29 @@ class ProductDetailsFragment :
         injectedViewModel.setNavigator(this)
         (activity as MainActivity).setVisibilityOfBottomView(View.VISIBLE)
 
+        injectedViewModel.getProductCount()
+
         arguments?.let { arg ->
             if (arg.containsKey("product")) {
                 product = arg.getSerializable("product") as Product
                 setDetails(product)
             }
         }
+
+        viewDataBinding.icAdd.setOnClickListener {
+            injectedViewModel.addCountValue()
+        }
+        viewDataBinding.icMinus.setOnClickListener {
+            injectedViewModel.minusCountValue()
+        }
     }
 
     override fun showError(error: Int) {
         Toast.makeText(requireContext(), error, Toast.LENGTH_LONG).show()
+    }
+
+    override fun setCountValue(count: String) {
+        viewDataBinding.tvCount.text = count
     }
 
     // end region OVERRIDE Methods
